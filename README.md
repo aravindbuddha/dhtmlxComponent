@@ -23,9 +23,9 @@ DHTMLX component development made easy.
 		//her mycompnent is your component name
 		mycomponent.start({
 			uid: (new Date()).getTime(),//unique id
-    	    		site: site_url,             //current site url
-    	     		app_path: site_url + &quot;path/to/mycomponent&quot;,//dhtmlx component path
-    	    		dhtmlx_codebase_path: site_url + &quot;path/to/dhtmlx/&quot;//path where your dhtmlx core lib reside.
+			site: site_url,             //current site url
+			app_path: site_url + &quot;path/to/mycomponent&quot;,//dhtmlx component path
+			dhtmlx_codebase_path: site_url + &quot;path/to/dhtmlx/&quot;//path where your dhtmlx core lib reside.
 		});
 	&lt;/script&gt;
 &lt;/head&gt;
