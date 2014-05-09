@@ -10,7 +10,7 @@ DHTMLX component development made easy.
 
 <h2>How to use</h2>
 <p>Just download the file and add it to your project once you done addeding.</p>
-<pre class="highlight highlight-javascript">
+<pre class="highlight highlight-html">
 &lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
