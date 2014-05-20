@@ -38,7 +38,7 @@ DHTMLX component development made easy.
 ```
 
 <h3>mycomponent.js(without dependency)</h3>
-<pre class="highlight highlight-javascript">
+```javascript
 	var mycomponent=dhtmlxcomponent({
 		model:mycomponent_model,
 		init:function(){
@@ -49,9 +49,9 @@ DHTMLX component development made easy.
 			//other function
 		}
 	});
-</pre> 
+``` 
 <h3>mycomponent.js(with dependency)</h3>
-<pre class="highlight highlight-javascript">
+```javascript
 	var mycomponent=dhtmlxcomponent([
 	"path/to/dhtmlx.js",
 	"part/to/model.js",
@@ -66,7 +66,7 @@ DHTMLX component development made easy.
 			//other function
 		}
 	});
-</pre> 
+``` 
 <h2>Features</h2>
 <ul>
 	<li>Easy migration when upgrading to next dhtmlx version.</li>
