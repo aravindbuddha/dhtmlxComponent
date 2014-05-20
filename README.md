@@ -11,7 +11,8 @@ DHTMLX component development made easy.
 <h2>How to use</h2>
 <p>Just download the file and add it to your project once you done addeding.</p>
 <h3>Your html</h3>
-<pre class="highlight highlight-html">
+
+``` html
 &lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
@@ -34,7 +35,8 @@ DHTMLX component development made easy.
 	&lt;!-- content goes here --&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-</pre>
+```
+
 <h3>mycomponent.js(without dependency)</h3>
 <pre class="highlight highlight-javascript">
 	var mycomponent=dhtmlxcomponent({
