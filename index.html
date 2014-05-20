@@ -37,8 +37,7 @@
 <p>DHTMLX component development made easy.</p>
 
 <ul>
-<li>Aravind Buddha <a href="http://twitter.com/aravindbuddha">@aravindbuddha</a>, <a href="https://github.com/aravindbuddha">github</a>
-</li>
+<li>Aravind Buddha <a href="http://twitter.com/aravindbuddha" title="Aravind Twitter">@aravindbuddha</a>, <a href="https://github.com/aravindbuddha" title="Aravind Github">github</a> </li>
 </ul><h2>
 <a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to use</h2>
 
@@ -47,66 +46,65 @@
 <h3>
 <a name="your-html" class="anchor" href="#your-html"><span class="octicon octicon-link"></span></a>Your html</h3>
 
-<pre>
-&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;MY DHTMLX COMPONENT&lt;/title&gt;
-    &lt;script type="text/javascript" src="path/to/dhtmlxcomponent.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="path/to/mycomponent.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript"&gt;
-        var site_url="http://yourdomain.com";
-        //her mycompnent is your component name
-        mycomponent.start({
-            uid: (new Date()).getTime(),//unique id
-            site: site_url,             //current site url
-            app_path: site_url + "path/to/mycomponent",//dhtmlx component path
-            dhtmlx_codebase_path: site_url + "path/to/dhtmlx/"//path where your dhtmlx core lib reside.
-        });
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- content goes here --&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+<div class="highlight highlight-html"><pre><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>MY DHTMLX COMPONENT<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"path/to/dhtmlxcomponent.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"path/to/mycomponent.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+        <span class="kd">var</span> <span class="nx">site_url</span><span class="o">=</span><span class="s2">"http://yourdomain.com"</span><span class="p">;</span>
+        <span class="c1">//her mycompnent is your component name</span>
+        <span class="nx">mycomponent</span><span class="p">.</span><span class="nx">start</span><span class="p">({</span>
+            <span class="nx">uid</span><span class="o">:</span> <span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">()).</span><span class="nx">getTime</span><span class="p">(),</span><span class="c1">//unique id</span>
+            <span class="nx">site</span><span class="o">:</span> <span class="nx">site_url</span><span class="p">,</span>             <span class="c1">//current site url</span>
+            <span class="nx">app_path</span><span class="o">:</span> <span class="nx">site_url</span> <span class="o">+</span> <span class="s2">"path/to/mycomponent"</span><span class="p">,</span><span class="c1">//dhtmlx component path</span>
+            <span class="nx">dhtmlx_codebase_path</span><span class="o">:</span> <span class="nx">site_url</span> <span class="o">+</span> <span class="s2">"path/to/dhtmlx/"</span><span class="c1">//path where your dhtmlx core lib reside.</span>
+        <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="c">&lt;!-- content goes here --&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
 
 <h3>
 <a name="mycomponentjswithout-dependency" class="anchor" href="#mycomponentjswithout-dependency"><span class="octicon octicon-link"></span></a>mycomponent.js(without dependency)</h3>
 
-<pre>
-    var mycomponent=dhtmlxcomponent({
-        model:mycomponent_model,
-        init:function(){
-        //This code runs immidatly.
-        //write all your initilzation here...
-        },
-        go:function(){
-            //other function
-        }
-    });
-</pre> 
+<div class="highlight highlight-javascript"><pre>    <span class="nx">dhtmlxcomponent</span><span class="p">({</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">"myComponent"</span>
+        <span class="nx">model</span><span class="o">:</span><span class="nx">mycomponent_model</span><span class="p">,</span>
+        <span class="nx">init</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="c1">//This code runs immidatly.</span>
+        <span class="c1">//write all your initilzation here...</span>
+        <span class="p">},</span>
+        <span class="nx">go</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">//other function</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+</pre></div>
 
 <h3>
 <a name="mycomponentjswith-dependency" class="anchor" href="#mycomponentjswith-dependency"><span class="octicon octicon-link"></span></a>mycomponent.js(with dependency)</h3>
 
-<pre>
-    var mycomponent=dhtmlxcomponent([
-    "path/to/dhtmlx.js",
-    "part/to/model.js",
-    "path/to/script.js"
-    ],{
-        model:mycomponent_model,
-        init:function(){
-        //This code runs immidatly.
-        //write all your initilzation here...
-        },
-        go:function(){
-            //other function
-        }
-    });
-</pre> 
+<div class="highlight highlight-javascript"><pre>    <span class="nx">dhtmlxcomponent</span><span class="p">([</span>
+    <span class="s2">"path/to/dhtmlx.js"</span><span class="p">,</span>
+    <span class="s2">"part/to/model.js"</span><span class="p">,</span>
+    <span class="s2">"path/to/script.js"</span>
+    <span class="p">],{</span>
+        <span class="nx">model</span><span class="o">:</span><span class="nx">mycomponent_model</span><span class="p">,</span>
+        <span class="nx">name</span><span class="o">:</span><span class="s2">"myComponent"</span><span class="p">,</span>
+        <span class="nx">init</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+        <span class="c1">//This code runs immidatly.</span>
+        <span class="c1">//write all your initilzation here...</span>
+        <span class="p">},</span>
+        <span class="nx">go</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span>
+            <span class="c1">//other function</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+</pre></div>
 
 <h2>
 <a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
@@ -118,7 +116,28 @@
     <li>Trackable objects management.</li>
     <li>Code redundency minimized.</li>
     <li>Fully MVC pattern</li>
-</ul>
+</ul><h2>
+<a name="the-mit-license-mit" class="anchor" href="#the-mit-license-mit"><span class="octicon octicon-link"></span></a>The MIT License (MIT)</h2>
+
+<p>Copyright (c) 2014 Aravind Buddha</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
       </section>
     </div>
 
