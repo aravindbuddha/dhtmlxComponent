@@ -3,10 +3,9 @@ dhtmlxComponent
 
 DHTMLX component development made easy.
 
-<ul>
-	<li>Aravind Buddha <a href="http://twitter.com/aravindbuddha">@aravindbuddha</a>, <a href="https://github.com/aravindbuddha">github</a>
-</li>
-</ul>
+
+* Aravind Buddha [@aravindbuddha](http://twitter.com/aravindbuddha "Aravind Twitter"), [github](https://github.com/aravindbuddha "Aravind Github") 
+
 
 <h2>How to use</h2>
 <p>Just download the file and add it to your project once you done addeding.</p>
@@ -39,7 +38,8 @@ DHTMLX component development made easy.
 
 <h3>mycomponent.js(without dependency)</h3>
 ```javascript
-	var mycomponent=dhtmlxcomponent({
+	dhtmlxcomponent({
+		name:"myComponent"
 		model:mycomponent_model,
 		init:function(){
 		//This code runs immidatly.
@@ -52,12 +52,13 @@ DHTMLX component development made easy.
 ``` 
 <h3>mycomponent.js(with dependency)</h3>
 ```javascript
-	var mycomponent=dhtmlxcomponent([
+	dhtmlxcomponent([
 	"path/to/dhtmlx.js",
 	"part/to/model.js",
 	"path/to/script.js"
 	],{
 		model:mycomponent_model,
+		name:"myComponent",
 		init:function(){
 		//This code runs immidatly.
 		//write all your initilzation here...
