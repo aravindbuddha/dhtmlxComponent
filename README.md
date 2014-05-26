@@ -7,9 +7,9 @@ DHTMLX component development made easy.
 * Aravind Buddha [@aravindbuddha](http://twitter.com/aravindbuddha "Aravind Twitter"), [github](https://github.com/aravindbuddha "Aravind Github") 
 
 
-<h2>How to use</h2>
+##How to use##
 <p>Just download the file and add it to your project once you done addeding.</p>
-<h3>Your html</h3>
+###Your html###
 
 ``` html
 <!doctype html>
@@ -36,7 +36,7 @@ DHTMLX component development made easy.
 </html>
 ```
 
-<h3>mycomponent.js(without dependency)</h3>
+###mycomponent.js(without dependency)###
 ```javascript
 	dhtmlxcomponent({
 		name:"myComponent"
@@ -50,7 +50,7 @@ DHTMLX component development made easy.
 		}
 	});
 ``` 
-<h3>mycomponent.js(with dependency)</h3>
+### mycomponent.js(with dependency)###
 ```javascript
 	dhtmlxcomponent([
 	"path/to/dhtmlx.js",
@@ -68,15 +68,31 @@ DHTMLX component development made easy.
 		}
 	});
 ``` 
-<h2>Features</h2>
-<ul>
-	<li>Easy migration when upgrading to next dhtmlx version.</li>
-	<li>Simple dependencey management.</li>
-	<li>Does not load same javascript file from same location.</li>
-	<li>Trackable objects management.</li>
-	<li>Code redundency minimized.</li>
-	<li>Fully MVC pattern</li>
-</ul>
+
+## MVC Really? ##
+
+Ya! dhxCom really support MVC Pattern. The simplest way it by giving type attribute while createing the component. If you didn't provide any type it will tabke contproller as default type.
+
+```javascript
+	dhtmlxcomponent({
+		name:"myComponent",
+		type:"model", //it can be view,model,contorller
+		init:function(){
+		
+		}
+	});
+
+```
+
+
+##Features##
+* Easy migration when upgrading to next dhtmlx version.
+* Simple dependencey management.
+* Does not load same javascript file from same location.
+* Trackable objects management.
+* Code redundency minimized.
+* Fully MVC pattern.
+* Easy namespace mangement.
 
 
 ##The MIT License (MIT)
