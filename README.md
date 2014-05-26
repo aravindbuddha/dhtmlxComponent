@@ -71,7 +71,7 @@ DHTMLX component development made easy.
 
 ## MVC Really? ##
 
-Ya! dhxCom really support MVC Pattern. The simplest way it by giving type attribute while createing the component. If you didn't provide any type it will tabke contproller as default type.
+Ya! dhxCom really support MVC Pattern. The simplest way is by giving type attribute while createing the component. If you didn't provide any type it will take controller as default type.
 
 ```javascript
 	dhtmlxcomponent({
@@ -83,7 +83,6 @@ Ya! dhxCom really support MVC Pattern. The simplest way it by giving type attrib
 	});
 
 ```
-
 
 ##Features##
 * Easy migration when upgrading to next dhtmlx version.
