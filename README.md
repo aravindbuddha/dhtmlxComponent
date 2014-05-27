@@ -3,6 +3,7 @@ dhtmlxComponent
 
 DHTMLX component development made easy.
 
+documentation can be found at http://aravindbuddha.github.io/dhtmlxComponent/
 
 * Aravind Buddha [@aravindbuddha](http://twitter.com/aravindbuddha "Aravind Twitter"), [github](https://github.com/aravindbuddha "Aravind Github") 
 
