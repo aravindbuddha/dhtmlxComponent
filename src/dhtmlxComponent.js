@@ -6,16 +6,14 @@
  * Copyright 2014 aravindbuddha and other contributors
  * Released under the MIT license
  * http://opensource.org/licenses/MIT
- *
  */
 (function (window, document, undefined) {
   var dhtmlxComponent = function (a, b) {
     var l = arguments.length,
       s = [],
-      namespace = {};
-    obj = {};
+      obj = {};
+    _constuct(l);
 
-    l = _constuct(l);
     //Constuctor
     function dhtmlxComponent() {
       this.init();
@@ -34,18 +32,22 @@
       }
     });
 
-    function _constuct(l) {
-      if (l === 1) {
+    function _constuct(argC) {
+      if (argC === 0) {
+        throw ("Arguments Missing!");
+      }
+      if (argC === 1) {
         //checking arguments
         if (isArray(a)) {
           s = a;
         } else if (isObject(a)) {
           obj = a;
-          createns(obj.name);
+          checkName(obj.name);
         } else {
           throw ("Incorrect arguments!");
         }
-      } else if (l === 2) {
+      }
+      if (argC === 2) {
         if (!isArray(a)) {
           throw ("First argument should be an array");
         }
@@ -54,21 +56,20 @@
         }
         s = a;
         obj = b;
-        createns(obj.name);
-      } else {
-        throw ("Arguments Missing!");
+        ready();
+        // createNS(obj.name);
       }
 
-      function createns(name) {
+
+      function checkName(name) {
         if (!name) {
           throw ("Oops! Component should have name");
         } else {
-          ns(name);
+          //createNS(name);
         }
       }
-      return l;
+      return argC;
     }
-
     //Is array or not
     function isArray(a) {
       if (a instanceof Array) {
@@ -88,17 +89,23 @@
       var i, assert = [],
         loadedScipts = 0;
       for (i = 0; i < urls.length; i++) {
+        if (isCss(urls[i])) {
+          loadCss(urls[i]);
+          continue;
+        }
         assert.push(urls[i]);
+        console.log(assert);
         //if Script is already in dom skip loadScript
         if (document.scripts[0].src === urls[i]) {
           loadedScripts++;
           continue;
         }
-        loadScript(urls[i], callback);
+        loadJs(urls[i]);
       }
       //load single js file
       //Cross browser script load check
-      function loadScript(url) {
+
+      function loadJs(url) {
         var script = document.createElement("script")
         script.type = "text/javascript";
 
@@ -119,12 +126,40 @@
         document.body.appendChild(script);
       }
 
+      function loadCss(url) {
+        var l = document.createElement('link');
+        l.type = "text/css";
+        l.rel = "stylesheet";
+        l.href = url;
+        if (document.links.length) {
+          document.links[document.links.length - 1].appendChild(l);
+        } else {
+          document.head = document.head || document.getElementsByTagName("head")[0];
+          document.head.appendChild(s);
+        }
+      }
+
+      function isCss(url) {
+        if (url.lastIndexOf('.css') > 0)
+          return true;
+        else
+          return false
+      }
+
+      function isJs(url) {
+        if (url.lastIndexOf('.js') > 0)
+          return true;
+        else
+          return false
+      }
+
       function isAllLoaded() {
         if (loadedScripts === urls.length) {
           return true;
         }
         return false
       }
+      //if callback given load it
       if (callback) {
         setTimeout(function () {
           if (isAllLoaded) {
@@ -133,6 +168,7 @@
           }
         }, 50);
       }
+      //end
     }
     //extending dhxCom Object
     function extend(obj) {
@@ -215,23 +251,26 @@
         }
       };
       extend(obj);
-      namespace = new dhtmlxComponent();
-      console.log(namespace);
+
+      nameSpace = new dhtmlxComponent();
+      createNS(obj.name, new dhtmlxComponent());
     }
 
-    function ns(str) {
-      var i = 0,
-        w = window,
-        ns = str.split('.');
-      for (i = 0, l = ns.length; i < l; i++) {
-        if (w[ns[i]]) {
-          throw ("Oops! Namespace '" + ns.slice(0, i + 1).join('.') + "' already exists!");
+    function createNS(ns, obj) {
+      var
+      n = ns.split('.'),
+        l = n.length,
+        o = window[n[0]] = window[n[0]] || {};
+
+      for (var i = 1; i < l; i++) {
+        if (o[n[i]]) {
+          throw ("Oops! Namespace '" + n.slice(0, i + 1).join('.') + "' already exists!");
           return;
         }
-        w = w[ns[i]] = {};
+        o = o[n[i]] = o[n[i]] || {};
       }
-      namespace = w;
-      return w;
+      o[n[l - 1]] = obj;
+      return;
     }
     //Cross Browser Dom Ready
     function DOMReady(callback) {
@@ -243,7 +282,6 @@
         window.attachEvent('onload', callback);
       }
     }
-
   }
   //exporting dhtmlxComponent;
   window['dhxCom'] = window['dhtmlxComponent'] = dhtmlxComponent;
